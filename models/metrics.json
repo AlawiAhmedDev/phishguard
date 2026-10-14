@@ -1,0 +1,646 @@
+{
+  "version": "0.1.0",
+  "dataset": {
+    "total": 200000,
+    "train": 160143,
+    "test": 39857,
+    "legitimate": 100000,
+    "phishing": 100000,
+    "split": "GroupShuffleSplit by host, 80/20"
+  },
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.7840780791329001,
+      "precision": 0.8389140271493213,
+      "recall": 0.700821531172824,
+      "f1": 0.7636753075571178,
+      "roc_auc": 0.8644155362671206,
+      "false_positive_rate": 0.13339328537170264,
+      "confusion_matrix": [
+        [
+          17346,
+          2670
+        ],
+        [
+          5936,
+          13905
+        ]
+      ],
+      "train_seconds": 1.2
+    },
+    "Random Forest": {
+      "accuracy": 0.8670998820784304,
+      "precision": 0.9002201430930105,
+      "recall": 0.8244040118945618,
+      "f1": 0.8606456025887244,
+      "roc_auc": 0.9248238196902787,
+      "false_positive_rate": 0.0905775379696243,
+      "confusion_matrix": [
+        [
+          18203,
+          1813
+        ],
+        [
+          3484,
+          16357
+        ]
+      ],
+      "train_seconds": 17.0
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.8716160272975889,
+      "precision": 0.9076863440026581,
+      "recall": 0.8261176351998387,
+      "f1": 0.8649832449404997,
+      "roc_auc": 0.9314621900080863,
+      "false_positive_rate": 0.08328337330135892,
+      "confusion_matrix": [
+        [
+          18349,
+          1667
+        ],
+        [
+          3450,
+          16391
+        ]
+      ],
+      "train_seconds": 11.6
+    },
+    "Char n-gram TF-IDF + LR": {
+      "accuracy": 0.9065408836590813,
+      "precision": 0.9343935309973046,
+      "recall": 0.8735950808931001,
+      "f1": 0.9029720507410591,
+      "roc_auc": 0.9642876369737333,
+      "false_positive_rate": 0.0608013589128697,
+      "confusion_matrix": [
+        [
+          18799,
+          1217
+        ],
+        [
+          2508,
+          17333
+        ]
+      ],
+      "train_seconds": 49.5
+    }
+  },
+  "selected_model": "Gradient Boosting",
+  "full_system_on_test": {
+    "accuracy": 0.8717414757758989,
+    "precision": 0.9150650960942344,
+    "recall": 0.8183055289551938,
+    "f1": 0.8639846743295019,
+    "roc_auc": 0.9281024867621652,
+    "false_positive_rate": 0.07528976818545163,
+    "confusion_matrix": [
+      [
+        18509,
+        1507
+      ],
+      [
+        3605,
+        16236
+      ]
+    ],
+    "test_urls_on_trusted_domains": {
+      "legitimate": 1502,
+      "phishing": 175
+    }
+  },
+  "recall_by_phishing_source": {
+    "faizann24": {
+      "n": 6508,
+      "recall": 0.8683159188690842
+    },
+    "phishing_database": {
+      "n": 6640,
+      "recall": 0.9051204819277109
+    },
+    "phiusiil": {
+      "n": 6693,
+      "recall": 0.7067085014193933
+    }
+  },
+  "modern_legit_benchmark": {
+    "n": 50,
+    "flagged_by_model_alone": 29,
+    "flagged_by_full_system": 3,
+    "urls": [
+      {
+        "url": "https://accounts.google.com/signin",
+        "model_score": 0.98,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+        "model_score": 0.984,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.paypal.com/signin",
+        "model_score": 0.723,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://github.com/login",
+        "model_score": 0.739,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.linkedin.com/login",
+        "model_score": 0.769,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.facebook.com/login.php",
+        "model_score": 0.871,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://appleid.apple.com/sign-in",
+        "model_score": 0.552,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.amazon.com/ap/signin",
+        "model_score": 0.727,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://outlook.live.com/mail/0/",
+        "model_score": 0.967,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.netflix.com/login",
+        "model_score": 0.752,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://mail.google.com/mail/u/0/#inbox",
+        "model_score": 0.606,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://drive.google.com/drive/my-drive",
+        "model_score": 0.043,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://docs.google.com/document/d/1a2b3c4d5e6f7g8h9i0j/edit",
+        "model_score": 0.727,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.dropbox.com/login",
+        "model_score": 0.777,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.instagram.com/accounts/login/",
+        "model_score": 0.975,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://web.whatsapp.com/",
+        "model_score": 0.135,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "model_score": 0.144,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Phishing",
+        "model_score": 0.22,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do",
+        "model_score": 0.006,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.reddit.com/r/netsec/",
+        "model_score": 0.618,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://docs.python.org/3/library/urllib.parse.html",
+        "model_score": 0.137,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://pypi.org/project/scikit-learn/",
+        "model_score": 0.06,
+        "trusted_domain": false,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.bbc.com/news/technology",
+        "model_score": 0.015,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.lemonde.fr/pixels/",
+        "model_score": 0.567,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.hespress.com/",
+        "model_score": 0.118,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.attijariwafabank.com/fr",
+        "model_score": 0.842,
+        "trusted_domain": false,
+        "model_flags": true,
+        "system_flags": true
+      },
+      {
+        "url": "https://www.cihbank.ma/",
+        "model_score": 0.131,
+        "trusted_domain": false,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.ebay.com/signin/",
+        "model_score": 0.439,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://signin.ebay.com/ws/eBayISAPI.dll?SignIn",
+        "model_score": 0.971,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.coinbase.com/signin",
+        "model_score": 0.768,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.binance.com/en/login",
+        "model_score": 0.645,
+        "trusted_domain": false,
+        "model_flags": true,
+        "system_flags": true
+      },
+      {
+        "url": "https://secure.chase.com/web/auth/dashboard",
+        "model_score": 0.965,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.bankofamerica.com/online-banking/sign-in/",
+        "model_score": 0.959,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://myaccount.google.com/security",
+        "model_score": 0.978,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://account.microsoft.com/account",
+        "model_score": 0.738,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://portal.azure.com/",
+        "model_score": 0.135,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://console.aws.amazon.com/console/home",
+        "model_score": 0.133,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.office.com/",
+        "model_score": 0.157,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://zoom.us/signin",
+        "model_score": 0.858,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://slack.com/signin",
+        "model_score": 0.714,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.notion.so/login",
+        "model_score": 0.873,
+        "trusted_domain": false,
+        "model_flags": true,
+        "system_flags": true
+      },
+      {
+        "url": "https://trello.com/login",
+        "model_score": 0.737,
+        "trusted_domain": true,
+        "model_flags": true,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.coursera.org/learn/machine-learning",
+        "model_score": 0.062,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://scholar.google.com/scholar?q=intrusion+detection",
+        "model_score": 0.123,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://arxiv.org/abs/1706.03762",
+        "model_score": 0.158,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.ups.com/track?tracknum=1Z999AA10123456784",
+        "model_score": 0.074,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.dhl.com/ma-fr/home/tracking.html",
+        "model_score": 0.087,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.jumia.ma/",
+        "model_score": 0.047,
+        "trusted_domain": false,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.avito.ma/",
+        "model_score": 0.049,
+        "trusted_domain": true,
+        "model_flags": false,
+        "system_flags": false
+      },
+      {
+        "url": "https://www.um5.ac.ma/",
+        "model_score": 0.333,
+        "trusted_domain": false,
+        "model_flags": false,
+        "system_flags": false
+      }
+    ]
+  },
+  "permutation_importance": [
+    {
+      "feature": "path_length",
+      "label": "path length",
+      "importance": 0.09614438806867032
+    },
+    {
+      "feature": "n_subdomains",
+      "label": "number of subdomains",
+      "importance": 0.051570815300253495
+    },
+    {
+      "feature": "path_depth",
+      "label": "path depth (number of /)",
+      "importance": 0.04724573025609955
+    },
+    {
+      "feature": "n_digits_host",
+      "label": "digits in the host name",
+      "importance": 0.04241605143273652
+    },
+    {
+      "feature": "suspicious_tld",
+      "label": "top-level domain often abused",
+      "importance": 0.036224102784208956
+    },
+    {
+      "feature": "tld_length",
+      "label": "top-level domain length",
+      "importance": 0.031987971913892424
+    },
+    {
+      "feature": "free_hosting",
+      "label": "free hosting / app platform",
+      "importance": 0.03123348782934914
+    },
+    {
+      "feature": "path_entropy",
+      "label": "randomness of the path",
+      "importance": 0.029907687421835315
+    },
+    {
+      "feature": "suspicious_words",
+      "label": "phishing keywords (login, verify, account...)",
+      "importance": 0.023400564038886306
+    },
+    {
+      "feature": "domain_length",
+      "label": "registered domain length",
+      "importance": 0.021633871573086872
+    },
+    {
+      "feature": "n_digits_path",
+      "label": "digits in the path",
+      "importance": 0.015122861496293893
+    },
+    {
+      "feature": "n_hyphens_path",
+      "label": "hyphens in the path",
+      "importance": 0.014691172178288858
+    },
+    {
+      "feature": "brand_outside_domain",
+      "label": "brand name used outside the real domain",
+      "importance": 0.014569715455464349
+    },
+    {
+      "feature": "n_special",
+      "label": "special characters (= & % ~ _ @)",
+      "importance": 0.012383900233289457
+    },
+    {
+      "feature": "n_dots_host",
+      "label": "dots in the host name",
+      "importance": 0.011811276791138536
+    },
+    {
+      "feature": "host_length",
+      "label": "host name length",
+      "importance": 0.011705673567338004
+    },
+    {
+      "feature": "host_entropy",
+      "label": "randomness of the host name",
+      "importance": 0.011029992234863983
+    },
+    {
+      "feature": "script_extension",
+      "label": "path ends in .php/.html/.asp",
+      "importance": 0.009979674503035895
+    },
+    {
+      "feature": "n_hyphens_host",
+      "label": "hyphens in the host name",
+      "importance": 0.007805329464679422
+    },
+    {
+      "feature": "digit_ratio",
+      "label": "share of digits in the URL",
+      "importance": 0.00516015401492389
+    },
+    {
+      "feature": "query_length",
+      "label": "query string length",
+      "importance": 0.005107366675601433
+    },
+    {
+      "feature": "url_length",
+      "label": "URL length",
+      "importance": 0.0050301066691011975
+    },
+    {
+      "feature": "has_at",
+      "label": "'@' sign in the URL",
+      "importance": 0.004144619818991479
+    },
+    {
+      "feature": "long_token",
+      "label": "long random token in the path",
+      "importance": 0.0031668858611725082
+    },
+    {
+      "feature": "has_port",
+      "label": "explicit port number",
+      "importance": 0.001058988669190275
+    },
+    {
+      "feature": "domain_has_digit",
+      "label": "digit in the registered domain",
+      "importance": 0.0009386335823101
+    },
+    {
+      "feature": "hex_token",
+      "label": "hexadecimal token in the URL",
+      "importance": 0.0007360703399412305
+    },
+    {
+      "feature": "has_punycode",
+      "label": "punycode (xn--) host, possible look-alike characters",
+      "importance": 0.00024600366556302153
+    },
+    {
+      "feature": "n_params",
+      "label": "number of query parameters",
+      "importance": 0.00020895433455743185
+    },
+    {
+      "feature": "has_double_slash",
+      "label": "'//' inside the path",
+      "importance": 4.6014022959761645e-05
+    },
+    {
+      "feature": "has_ip",
+      "label": "IP address instead of a domain name",
+      "importance": 0.0
+    },
+    {
+      "feature": "is_shortener",
+      "label": "URL shortener",
+      "importance": 0.0
+    }
+  ],
+  "total_seconds": 162.0
+}
