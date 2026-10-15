@@ -79,7 +79,7 @@ Les autres commandes (`--json`, `--fail-on-phishing`, `train`, `update-reputatio
 
 ## Auteur
 
-**Alawi Ahmed**, Master en Cybersécurité et Intelligence Artificielle. GitHub : [@AlawiAhmedDev](https://github.com/AlawiAhmedDev)
+**Alawi Masfar**, Master en Cybersécurité et Intelligence Artificielle. GitHub : [@AlawiAhmedDev](https://github.com/AlawiAhmedDev)
 
 ## Licence
 

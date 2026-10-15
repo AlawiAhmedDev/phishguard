@@ -168,7 +168,7 @@ phishguard/
 
 ## Author
 
-**Alawi Ahmed**, MSc in Cybersecurity and Artificial Intelligence. GitHub: [@AlawiAhmedDev](https://github.com/AlawiAhmedDev)
+**Alawi Masfar**, MSc in Cybersecurity and Artificial Intelligence. GitHub: [@AlawiAhmedDev](https://github.com/AlawiAhmedDev)
 
 ## License
 

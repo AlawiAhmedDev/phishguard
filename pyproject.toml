@@ -9,7 +9,7 @@ description = "Machine-learning phishing URL detector with explanations; URLs ar
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Alawi Ahmed" }]
+authors = [{ name = "Alawi Masfar" }]
 keywords = ["phishing", "security", "machine-learning", "url-classification", "explainable-ai"]
 dependencies = [
     # pinned: the bundled model file was trained with this exact version
