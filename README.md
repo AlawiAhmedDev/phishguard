@@ -7,7 +7,7 @@
 
 **A machine-learning phishing URL detector that explains each decision and never visits the link.**
 
-*[Version française](README.fr.md)*
+**[▶ Try the live demo](https://alawiahmeddev.github.io/phishguard/)**, which runs entirely in your browser · *[Version française](README.fr.md)*
 
 Paste a link: PhishGuard shows which domain it really opens, scores it with a gradient-boosting model trained on 200,000 URLs, and lists the features that raised the score. Because only the text of the URL is analysed, it is instant, works offline and is safe to run on live phishing links.
 
@@ -133,6 +133,12 @@ curl "http://127.0.0.1:5000/api/check?url=https://misjrg-sav.web.app/"
 
 Cleaning: normalisation, deduplication, removal of URLs labelled both ways, at most 5 URLs per host, balanced classes. Train/test split by host (`GroupShuffleSplit`), checked by an assertion in the code. Full results, including per-source recall and the benchmark URL by URL, are in [`models/metrics.json`](models/metrics.json).
 
+## Browser demo
+
+The [live demo](https://alawiahmeddev.github.io/phishguard/) is a static page on GitHub Pages with no server. `scripts/export_web_model.py` exports the 395 trees of the trained model, the public-suffix rules and the popular-domain list to `docs/model.json` (1.3 MB), and `docs/phishguard.js` re-implements the feature extraction, the tree traversal and the explanation in JavaScript. Links typed in the demo never leave the visitor's browser.
+
+A port is only useful if it is exact. It was checked against the Python package on 55,924 URLs: the largest score difference is 2 × 10⁻¹⁶. Reaching that took one non-obvious fix: since Python 3.12, `sum()` uses compensated (Neumaier) summation, and a 10⁻¹⁵ difference in the entropy features was enough to flip tree splits that sit exactly on a value, so the JavaScript reproduces the same summation. `tests/test_web_parity.py` runs the comparison in CI.
+
 ## Project layout
 
 ```
@@ -147,9 +153,9 @@ phishguard/
 │   ├── app.py          # Flask web interface and JSON API
 │   └── cli.py          # command-line interface
 ├── models/             # trained model, metrics, popular domains
-├── scripts/            # chart generation
-├── tests/              # 29 pytest tests
-└── docs/               # screenshots and charts
+├── scripts/            # charts, export of the model for the browser
+├── tests/              # 30 pytest tests, including JS/Python parity
+└── docs/               # browser demo (GitHub Pages), screenshots, charts
 ```
 
 ## Limitations

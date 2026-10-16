@@ -2,7 +2,7 @@
 
 **Détecteur d'URL de phishing par machine learning, qui explique chaque décision et ne visite jamais le lien.**
 
-*[English version](README.md)*
+**[▶ Essayer la démo en ligne](https://alawiahmeddev.github.io/phishguard/)**, qui fonctionne entièrement dans votre navigateur · *[English version](README.md)*
 
 Collez un lien : PhishGuard montre le domaine qu'il ouvre réellement, lui attribue un score avec un modèle de gradient boosting entraîné sur 200 000 URL, et liste les caractéristiques qui ont fait monter ce score. Seul le texte de l'URL est analysé : c'est instantané, ça fonctionne hors ligne et c'est sans danger, même sur des liens de phishing actifs.
 
